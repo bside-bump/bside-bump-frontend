@@ -15,6 +15,9 @@ const config: Config = {
       width: {
         layout: "var(--min-layout-size)",
       },
+      minHeight: {
+        inherit: "inherit",
+      },
     },
   },
   plugins: [],
