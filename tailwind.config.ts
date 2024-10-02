@@ -17,9 +17,8 @@ const config: Config = {
         primary03: "#98FFBB",
         gray01: "#202021",
         gray02: "#4A4A4C",
-        gray03: "#CDD1D6",
+        gray03: "#CED1D6",
         gray04: "#F5F5F6",
-        // home: "#F9FFF1",
       },
       width: {
         layout: "var(--min-layout-size)",
