@@ -19,7 +19,7 @@ const config: Config = {
         gray02: "#4A4A4C",
         gray03: "#CDD1D6",
         gray04: "#F5F5F6",
-        home: "#F9FFF1",
+        // home: "#F9FFF1",
       },
       width: {
         layout: "var(--min-layout-size)",
@@ -54,6 +54,10 @@ const config: Config = {
       },
       gridTemplateColumns: {
         list: "repeat(auto-fill, minmax(5rem, 1fr))",
+      },
+      backgroundImage: {
+        result: "url('/imgs/result-background.png')",
+        home: "url(/imgs/home-background.png)",
       },
     },
   },
