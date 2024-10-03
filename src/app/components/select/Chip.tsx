@@ -1,4 +1,4 @@
-import CloseIcon from "@public/icons/close.svg";
+import CloseIcon from "@public/icons/circle-close.svg";
 
 const Chip = ({
   selectedCategory,
@@ -8,8 +8,8 @@ const Chip = ({
   hasDelete,
   onClickDelete,
 }: {
-  selectedCategory?: string;
-  value: string;
+  selectedCategory?: number;
+  value: number;
   label: string;
   onClickChip?: () => void;
   hasDelete?: boolean;
