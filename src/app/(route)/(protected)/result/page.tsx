@@ -1,20 +1,33 @@
+"use client";
+
 import Button from "@/app/components/Button";
 import ButtonGroup from "@/app/components/result/ButtonGroup";
 import ClientItem from "@/app/components/result/ClientItem";
 import ResetIcon from "@public/icons/reset.svg";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-async function fetchData() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Data loaded");
-    }, 5000); // 5초 지연
-  });
-}
+const ResultPage = () => {
+  // const [data, setData] = useState(null);
 
-const ResultPage = async () => {
-  const data = await fetchData();
-  console.log("data", data);
+  useEffect(() => {
+    const fetchData = async () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Data loaded");
+        }, 10000); // 5초 지연
+      });
+    };
+
+    fetchData();
+
+    // const loadData = async () => {
+    //   const result = await fetchData();
+    //   setData(result as any);
+    // };
+
+    // loadData(); // 데이터 로드
+  }, []);
 
   return (
     <div className="px-6 bg-result bg-cover min-h-inherit flex flex-col">
