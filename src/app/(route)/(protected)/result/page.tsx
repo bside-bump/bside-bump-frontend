@@ -82,7 +82,7 @@ const ResultPage = () => {
   };
 
   const handleClickShare = () => {
-    const { Kakao, location } = window;
+    const { Kakao } = window;
 
     if (imageBlob === null) return;
 
@@ -180,15 +180,8 @@ const ResultPage = () => {
               </div>
               <div className="flex flex-col items-center gap-y-8">
                 {data.suggestedItems.map((item, index) => (
-                  <div key={index}>
-                    <div className="w-full rounded-xl overflow-hidden max-h-48 relative">
-                      <Image
-                        src="/imgs/mock-image.avif"
-                        alt="이미지"
-                        width={300}
-                        height={180}
-                        className="w-full"
-                      />
+                  <div key={index} className="w-full">
+                    <div className="w-full rounded-xl overflow-hidden h-48 relative bg-[url(/imgs/mock-image.avif)] bg-cover bg-center">
                       <div className="absolute top-2 right-2 rounded-lg flex items-center py-1 px-2 bg-black bg-opacity-60">
                         {data.recommendationType === "MORE" ? (
                           <>
@@ -225,7 +218,10 @@ const ResultPage = () => {
               </div>
             </div>
 
-            <div className="flex justify-center w-full border-t border-gray04 mt-8 pt-4">
+            <div
+              className="flex justify-center w-full border-t border-gray04 mt-8 pt-4"
+              data-html2canvas-ignore={true}
+            >
               <div
                 className="inline-flex items-center cursor-pointer"
                 onClick={handleDownload}
