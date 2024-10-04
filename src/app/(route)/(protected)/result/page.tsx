@@ -61,13 +61,18 @@ const ResultPage = () => {
     const createBlob = async () => {
       try {
         const page = pageRef.current;
-        const canvas = await html2canvas(page as HTMLDivElement, { scale: 2 });
+        setImageBlob(null);
 
-        canvas.toBlob((blob) => {
-          if (blob !== null) {
-            setImageBlob(blob);
-          }
-        });
+        setTimeout(async () => {
+          const canvas = await html2canvas(page as HTMLDivElement, {
+            scale: 2,
+          });
+          canvas.toBlob((blob) => {
+            if (blob !== null) {
+              setImageBlob(blob);
+            }
+          });
+        }, 500);
       } catch (error) {
         alert("이미지 저장을 실패했습니다. 다시 시도해주세요");
       }
@@ -76,7 +81,7 @@ const ResultPage = () => {
     createBlob();
   }, [pageRef, searchParams, isLoading]);
 
-  const handleDownload = async () => {
+  const handleDownload = () => {
     if (imageBlob === null) return;
     saveAs(imageBlob as Blob, "result.png");
   };
@@ -114,7 +119,7 @@ const ResultPage = () => {
             } 사겠어요`,
             imageUrl: res.infos.original.url,
             imageWidth: 400,
-            imageHeight: 800,
+            imageHeight: 400,
             link: {
               mobileWebUrl: "https://with-that-money.vercel.app",
               webUrl: "https://with-that-money.vercel.app",
@@ -136,6 +141,7 @@ const ResultPage = () => {
         alert(JSON.stringify(err));
       });
   };
+
   const handleClickReset = () => {
     window.location.replace("/ask-item");
   };
