@@ -6,7 +6,6 @@ import ResetIcon from "@public/icons/reset.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import CloseIcon from "@public/icons/close.svg";
 import DownloadIcon from "@public/icons/dowonload.svg";
 
 import html2canvas from "html2canvas";
@@ -193,9 +192,12 @@ const ResultPage = () => {
                       <div className="absolute top-2 right-2 rounded-lg flex items-center py-1 px-2 bg-black bg-opacity-60">
                         {data.recommendationType === "MORE" ? (
                           <>
-                            <CloseIcon />
                             <span className="text-white text-xs">
-                              {item.quantity}
+                              남은 돈:{" "}
+                              {item.change === 0
+                                ? item.change
+                                : formatWithCommas(item.change.toString())}
+                              원
                             </span>
                           </>
                         ) : (
@@ -208,18 +210,10 @@ const ResultPage = () => {
                     <div className="flex items-center justify-center mt-2">
                       <p className="mr-1 font-bold">
                         {item.name}{" "}
-                        {data.recommendationType === "EXPENSIVE" &&
-                          `${item.percentage}%`}
+                        {data.recommendationType === "EXPENSIVE"
+                          ? `${item.percentage}%`
+                          : `X${item.quantity}`}
                       </p>
-                      {data.recommendationType === "MORE" && (
-                        <p className="bg-[#D7EDE7] rounded px-2 py-1 text-gray02 text-xs font-semibold">
-                          남은 돈:{" "}
-                          {item.change === 0
-                            ? item.change
-                            : formatWithCommas(item.change.toString())}
-                          원
-                        </p>
-                      )}
                     </div>
                   </div>
                 ))}
