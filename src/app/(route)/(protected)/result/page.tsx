@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Button from "@/app/components/Button";
@@ -74,6 +75,7 @@ const ResultPage = () => {
           });
         }, 500);
       } catch (error) {
+        console.error(error);
         alert("이미지 저장을 실패했습니다. 다시 시도해주세요");
       }
     };
