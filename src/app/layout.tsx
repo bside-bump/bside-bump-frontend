@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Providers from "@/utils/provider";
+import Providers from "@/utils/Providers";
 import KakaoScript from "@/utils/KakaoScript";
 
 declare global {
