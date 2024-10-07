@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import Button from "@/app/components/Button";
+import Button from "@/components/Button";
 import ResetIcon from "@public/icons/reset.svg";
 // import CloseIcon from "@public/icons/close.svg";
 import Image from "next/image";
@@ -12,10 +12,10 @@ import DownloadIcon from "@public/icons/dowonload.svg";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import { useRef } from "react";
-import { useStore } from "@/app/store/useStore";
+import { useStore } from "@/store/useStore";
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
-import { formatWithCommas } from "@/app/utils/formatWithCommas";
+import { formatWithCommas } from "@/utils/formatWithCommas";
 import ResultPageLoading from "./loading";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
