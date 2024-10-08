@@ -7,8 +7,8 @@ import Chip from "@/components/select/Chip";
 import Item from "@/components/select/Item";
 import Alert from "@/components/Alert";
 import { useStore } from "@/store/useStore";
-import AddCircle from "@public/icons/circle-add.svg";
-import EmptyIcon from "@public/icons/empty-list.svg";
+import { CircleAddIcon, AddItemIcon } from "@/components/icons";
+
 import BottomSheet from "@/components/BottomSheet";
 import { formatWithCommas } from "@/utils/formatWithCommas";
 import usePriceChange from "@/hooks/usePriceChange";
@@ -237,7 +237,7 @@ const SelectPage = () => {
               className="flex items-center cursor-pointer"
               onClick={openBottomSheet}
             >
-              <AddCircle />
+              <CircleAddIcon />
               <span className="ml-1 text-gray02 text-sm font-semibold">
                 직접 추가하기
               </span>
@@ -262,7 +262,7 @@ const SelectPage = () => {
             {isSuccess &&
               (data.every((category) => category.products.length === 0) ? (
                 <div className="w-full h-full flex-1 flex flex-col justify-center items-center text-center gap-y-5">
-                  <EmptyIcon />
+                  <AddItemIcon />
                   <p className="break-keep text-gray02 font-semibold">
                     입력하신 품목보다 높은 가격의 추천 품목이 없어요 <br />
                     품목을 직접 추가해 보세요
