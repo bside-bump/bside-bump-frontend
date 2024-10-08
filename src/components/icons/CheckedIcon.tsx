@@ -1,4 +1,3 @@
-import { color } from "html2canvas/dist/types/css/types/color";
 import { IconProps } from "./icon.types";
 
 const CheckedIcon = ({
